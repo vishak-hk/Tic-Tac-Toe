@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    background-color: red;
+}
+.div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+}
+
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(3,auto);
+    justify-content: center;
+    margin-top: 130px;
+}
+
+.cell {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border: 2px solid black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: none;
+    cursor: pointer; 
+}
+
+.cell.X,.cell.O {
+    cursor: not-allowed;
+}
+
+.cell:nth-child(3n+1) {
+    border-left: none;
+}
+
+.cell:nth-child(3n+3) {
+    border-right: none;
+}
+
+.cell:nth-child(9),
+.cell:nth-child(7),
+.cell:nth-child(8) {
+       border-bottom: none;
+}
+
+#text {
+    font-size: 70px;
+    margin-left: 825px;
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: underline;
+}
+
+#restartButton {
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 40px;
+    margin-left: 850px;
+    margin-top: 90px;
+    font-family: 'Ubuntu', sans-serif;  
+    border-radius: 7px;
+    border-width: 0px;
+    padding: 5px 15px 5px 15px ;
+    box-shadow: 2px 1px 14px 1px;
+}
+
+#restartButton:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.X::before,.X::after {
+    content: '';
+    width: 7px;
+    height: 80%;
+    position: absolute;
+    background-color: black;
+}
+
+.X::before {
+    transform: rotate(45deg);
+}
+
+.X::after {
+    transform: rotate(-45deg);
+}
+
+.O::before {
+    content: '';
+    width: 57%;
+    height: 57%;
+    background-color: transparent;
+    border: 7px solid black;
+    border-radius: 50%;
+}
+
